@@ -113,7 +113,6 @@ public class Main
                             System.out.println("Kaartnummer: " + k1.getKaartnummer());
                             break;
                         case "4":
-                            break;
                     }
                     break;
                 case "4":
