@@ -1,4 +1,3 @@
-import java.util.Queue;
 import java.util.Scanner;
 
 public class Main
@@ -60,6 +59,8 @@ public class Main
                             case "5":
                                 incheckMenuActief = false;
                                 break;
+                            default:
+                                System.out.println("Voer een geldige optie in");
 
                         }
                     }
@@ -89,6 +90,9 @@ public class Main
                                 case "3":
                                     saldoMenuActief = false;
                                     break;
+                                default:
+                                    System.out.println("Voer een geldige optie in");
+
                             }
                         }
                         catch (Exception e)
@@ -124,11 +128,17 @@ public class Main
                             case "4":
                                 infoMenuActief = false;
                                 break;
+                            default:
+                                System.out.println("Voer een geldige optie in");
+
                         }
                     }
                     break;
                 case "4":
                     System.exit(0);
+                default:
+                    System.out.println("Voer een geldige optie in");
+
             }
         }
     }
