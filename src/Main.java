@@ -1,3 +1,4 @@
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Main
@@ -64,55 +65,66 @@ public class Main
                     }
                     break;
                 case "2":
-                    System.out.println("-------Menu-------");
-                    System.out.println("1. Saldo toevoegen");
-                    System.out.println("2. Saldo tonen");
-                    System.out.println("3. Terug");
-
-                    System.out.print("Uw menu keuze: ");
-                    mainMenuInvoer = sc.nextLine();
-                    try
+                    boolean saldoMenuActief = true;
+                    while (saldoMenuActief)
                     {
+                        System.out.println("-------Menu-------");
+                        System.out.println("1. Saldo toevoegen");
+                        System.out.println("2. Saldo tonen");
+                        System.out.println("3. Terug");
+
+                        System.out.print("Uw menu keuze: ");
+                        mainMenuInvoer = sc.nextLine();
+                        try
+                        {
+
+                            switch (mainMenuInvoer)
+                            {
+                                case "1":
+                                    automaat.saldoOpwaarderen(k1);
+                                    break;
+                                case "2":
+                                    automaat.toonSaldo(k1);
+                                    break;
+                                case "3":
+                                    saldoMenuActief = false;
+                                    break;
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            System.out.println("Please put in a number");
+                        }
+                    }
+                    break;
+                case "3":
+                    boolean infoMenuActief = true;
+                    while (infoMenuActief)
+                    {
+                        System.out.println("-------Menu-------");
+                        System.out.println("1. Toon of je bent ingecheckt");
+                        System.out.println("2. Toon of je kaart geldig is");
+                        System.out.println("3. Toon je kaartnummer");
+                        System.out.println("4. Terug");
+
+                        System.out.print("Uw menu keuze: ");
+                        mainMenuInvoer = sc.nextLine();
 
                         switch (mainMenuInvoer)
                         {
                             case "1":
-                                automaat.saldoOpwaarderen(k1);
+                                System.out.println("Ingecheckt: " + k1.getIngecheckt());
                                 break;
                             case "2":
-                                automaat.toonSaldo(k1);
+                                System.out.println("Geldig: " + k1.getGeldig());
                                 break;
                             case "3":
+                                System.out.println("Kaartnummer: " + k1.getKaartnummer());
+                                break;
+                            case "4":
+                                infoMenuActief = false;
                                 break;
                         }
-                    }
-                    catch (Exception e)
-                    {
-                        System.out.println("Please put in a number");
-                    }
-                    break;
-                case "3":
-                    System.out.println("-------Menu-------");
-                    System.out.println("1. Toon of je bent ingecheckt");
-                    System.out.println("2. Toon of je kaart geldig is");
-                    System.out.println("3. Toon je kaartnummer");
-                    System.out.println("4. Terug");
-
-                    System.out.print("Uw menu keuze: ");
-                    mainMenuInvoer = sc.nextLine();
-
-                    switch (mainMenuInvoer)
-                    {
-                        case "1":
-                            System.out.println("Ingecheckt: " + k1.getIngecheckt());
-                            break;
-                        case "2":
-                            System.out.println("Geldig: " + k1.getGeldig());
-                            break;
-                        case "3":
-                            System.out.println("Kaartnummer: " + k1.getKaartnummer());
-                            break;
-                        case "4":
                     }
                     break;
                 case "4":
